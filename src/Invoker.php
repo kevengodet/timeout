@@ -26,7 +26,7 @@ final class Invoker
         pcntl_alarm($timeoutInSeconds);
         try {
             $result = $callable();
-        } catch (\Throwable $t) {
+        } catch (Throwable $t) {
             pcntl_alarm(0);
             throw $t;
         }
